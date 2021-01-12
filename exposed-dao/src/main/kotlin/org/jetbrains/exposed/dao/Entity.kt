@@ -27,8 +27,7 @@ open class Entity<ID:Comparable<ID>>(val id: EntityID<ID>) {
     }
 
     internal fun isNewEntity(): Boolean {
-        val cache = TransactionManager.current().entityCache
-        return cache.inserts[klass.table]?.contains(this) ?: false
+        return id._value != null
     }
 
     /**
