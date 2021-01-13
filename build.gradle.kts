@@ -4,7 +4,10 @@ plugins {
 }
 
 subprojects {
+    apply(plugin = "java")
     apply(plugin = "tanvd.kosogor")
+
+    java.targetCompatibility = JavaVersion.VERSION_14
 }
 
 repositories {
